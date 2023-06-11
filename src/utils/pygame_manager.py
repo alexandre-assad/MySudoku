@@ -11,6 +11,6 @@ def one_key(event):
 
     if event.type == pygame.KEYDOWN:
         
-        if event.key == pygame.K_UP:
+        if event.key == pygame.K_1:
             return True
         return False

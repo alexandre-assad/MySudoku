@@ -37,3 +37,6 @@ class Grid:
         for j in range(9):
             list_values_2.append(self.g_matrix[x][j])
         return exter(exter(list_values_1,[1,2,3,4,5,6,7,8,9]),list_values_2)
+    
+test_grid = Grid([[1,2,3],[5,8,9],[2,4,7],[3,6,1,2],[7,9],[1],[4,5],[6,8],[2,4]])
+print(test_grid.potential_value_lines(3,7))
