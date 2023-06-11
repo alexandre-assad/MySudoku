@@ -8,7 +8,7 @@ def position_in_grid(y,x):
 def create_display_game():
     global oneImg,twoImg,threeImg,fourImg,fiveImg,sixImg,sevenImg,eightImg,nineImg,backgroundImg
     pygame.init()
-    game_object = Game(screen=pygame.display.set_mode((800,600)),size=[(800,600)])
+    game_object = Game(screen=pygame.display.set_mode((800,630)),size=[(800,600)])
     pygame.display.set_caption("My Sokoban")
     oneImg = pygame.image.load(sprite_path("number_one.png")).convert_alpha()
     twoImg = pygame.image.load(sprite_path("number_two.png")).convert_alpha()
@@ -25,25 +25,36 @@ def create_display_game():
 
 def display_game(game,grid):
     game.screen.blit(backgroundImg,(0,0))
+    
     for i in range(9):
         for j in range(9):
+            
             if grid.g_matrix[i][j].value == 1:
                 game.screen.blit(oneImg,position_in_grid(i,j))
+                
             elif grid.g_matrix[i][j].value == 2:
                 game.screen.blit(twoImg,position_in_grid(i,j))
+                
             elif grid.g_matrix[i][j].value == 3:
                 game.screen.blit(threeImg,position_in_grid(i,j))
+                
             elif grid.g_matrix[i][j].value == 4:
                 game.screen.blit(fourImg,position_in_grid(i,j))
+                
             elif grid.g_matrix[i][j].value == 5:
                 game.screen.blit(fiveImg,position_in_grid(i,j))
+                
             elif grid.g_matrix[i][j].value == 6:
                 game.screen.blit(sixImg,position_in_grid(i,j))
+                
             elif grid.g_matrix[i][j].value == 7:
                 game.screen.blit(sevenImg,position_in_grid(i,j))
+                
             elif grid.g_matrix[i][j].value == 8:
                 game.screen.blit(eightImg,position_in_grid(i,j))
+                
             elif grid.g_matrix[i][j].value == 9:
                 game.screen.blit(nineImg,position_in_grid(i,j))
+                
     pygame.display.update()
     return "game"

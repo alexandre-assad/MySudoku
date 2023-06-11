@@ -11,6 +11,7 @@ for i in range(9):
     sub_sudoku = []
 print(sudoku_list)
 sudoku_map = Grid(sudoku_list)
+sudoku_map.g_matrix[2][4]= Case(5,2,4)
 
 def main(state):
     game_object = create_display_game()
