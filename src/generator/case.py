@@ -14,7 +14,10 @@ class Case:
         
         return str(self.value)
     
-    
+    """
+    Input : self.potential value 
+    Outpout : Self.value if there is only one potential value
+    """
     def get_value(self):
         
         if len(self.potential_value)==1:
