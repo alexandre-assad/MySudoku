@@ -1,7 +1,10 @@
 from src.layout.game import *
 from src.generator.grid import *
 from src.generator.case import *
+from src.utils.txt_manager import *
+from src.utils.os_manager import *
 
+print(parse(sudoku_path("sudoku1.txt")))
 
 
 """
@@ -14,7 +17,6 @@ for i in range(9):
         sub_sudoku.append(Case(2,i,j))
     sudoku_list.append(sub_sudoku)
     sub_sudoku = []
-print(sudoku_list)
 sudoku_map = Grid(sudoku_list)
 sudoku_map.g_matrix[2][4]= Case(0,2,4)
 

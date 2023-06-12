@@ -8,3 +8,7 @@ Output : a str, the path to get the image
 def sprite_path(file:str):
     sprite_path = "assets/sprites"
     return path.join(sprite_path,file)
+
+def sudoku_path(file:str):
+    sprite_path = "assets/sudoku_grids"
+    return path.join(sprite_path,file)

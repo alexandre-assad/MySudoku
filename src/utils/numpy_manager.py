@@ -20,3 +20,10 @@ def exter(arr1:list,arr2:list) -> list:
     dif2 = np.setdiff1d(arr2, arr1)
     temp3 = np.concatenate((dif1, dif2))
     return temp3
+
+
+"""
+To be continued
+def is_unique(value:int,arr:list) -> bool:
+    return 
+"""
