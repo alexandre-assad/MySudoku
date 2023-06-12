@@ -10,6 +10,7 @@ class Grid:
     def __str__(self):
         for i in self.g_matrix:
             print(i)
+        return ""
     
     """
     Input : two int and a matrix, coordinates x and y of a case, with the matrix of the grid

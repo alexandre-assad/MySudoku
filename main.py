@@ -6,20 +6,10 @@ from src.utils.os_manager import *
 
 
 
-def generate_map_from_txt(file):
-    sudoku_list = parse(sudoku_path(file))
-    final_sudoku_map = []
-    sub_sudoku_map = []
-    for i in range(9):
-        for j in range(9):
-            sub_sudoku_map.append(Case(value=sudoku_list[i][j],x=i,y=j))
-        final_sudoku_map.append(sub_sudoku_map)
-        sub_sudoku_map = []
-    sudoku_map = Grid(final_sudoku_map)
-    return sudoku_map
+
 
 sudoku_map = generate_map_from_txt("sudoku1.txt")
-    
+print(sudoku_map)
 
 """
 To be ereased, first test of sudoku matrix
