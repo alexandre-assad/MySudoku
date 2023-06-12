@@ -8,8 +8,7 @@ class Grid:
         
         
     def __str__(self):
-        for i in self.g_matrix:
-            print(i)
+        print(self.g_matrix)
         return ""
     
     """

@@ -8,7 +8,7 @@ Input : coordinates x and y in a matrix
 Outpout : an array of coordinates in a pygame scene
 """
 def position_in_grid(y,x):
-    return [y*71,x*71]
+    return [x*71,y*71]
 
 
 """
