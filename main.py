@@ -1,7 +1,7 @@
 from src.layout.game import *
 from src.generator.grid import *
 from src.generator.case import *
-from src.utils.txt_manager import *
+from src.tools.txt_manager import *
 from src.utils.os_manager import *
 
 
