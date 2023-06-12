@@ -1,7 +1,7 @@
 import pygame 
 from src.generator.game_class import Game
 from src.utils.os_manager import *
-
+from src.generator.button import *
 
 """
 Input : coordinates x and y in a matrix
@@ -36,6 +36,7 @@ def create_display_game():
 
 """
 Input : A game object and a matrix
+Basic Code : For each value of the matrix, create a button with the image of the number
 Outpout : Display the screen of the game object, where there are images correlated to the matrix values
 """
 
@@ -47,34 +48,44 @@ def display_game(game,grid):
         for j in range(9):
             
             if grid.g_matrix[i][j].value == 0:
-                game.screen.blit(emptyImg,position_in_grid(i,j))
+                button = Button(x=position_in_grid(i,j)[0],y=position_in_grid(i,j)[1],image=emptyImg)
+                button.draw(game)
                 
             elif grid.g_matrix[i][j].value == 1:
-                game.screen.blit(oneImg,position_in_grid(i,j))
+                button = Button(x=position_in_grid(i,j)[0],y=position_in_grid(i,j)[1],image=oneImg)
+                button.draw(game)
                 
             elif grid.g_matrix[i][j].value == 2:
-                game.screen.blit(twoImg,position_in_grid(i,j))
+                button = Button(x=position_in_grid(i,j)[0],y=position_in_grid(i,j)[1],image=twoImg)
+                button.draw(game)
                 
             elif grid.g_matrix[i][j].value == 3:
-                game.screen.blit(threeImg,position_in_grid(i,j))
+                button = Button(x=position_in_grid(i,j)[0],y=position_in_grid(i,j)[1],image=threeImg)
+                button.draw(game)
                 
             elif grid.g_matrix[i][j].value == 4:
-                game.screen.blit(fourImg,position_in_grid(i,j))
+                button = Button(x=position_in_grid(i,j)[0],y=position_in_grid(i,j)[1],image=fourImg)
+                button.draw(game)
                 
             elif grid.g_matrix[i][j].value == 5:
-                game.screen.blit(fiveImg,position_in_grid(i,j))
+                button = Button(x=position_in_grid(i,j)[0],y=position_in_grid(i,j)[1],image=fiveImg)
+                button.draw(game)
                 
             elif grid.g_matrix[i][j].value == 6:
-                game.screen.blit(sixImg,position_in_grid(i,j))
+                button = Button(x=position_in_grid(i,j)[0],y=position_in_grid(i,j)[1],image=sixImg)
+                button.draw(game)
                 
             elif grid.g_matrix[i][j].value == 7:
-                game.screen.blit(sevenImg,position_in_grid(i,j))
+                button = Button(x=position_in_grid(i,j)[0],y=position_in_grid(i,j)[1],image=sevenImg)
+                button.draw(game)
                 
             elif grid.g_matrix[i][j].value == 8:
-                game.screen.blit(eightImg,position_in_grid(i,j))
+                button = Button(x=position_in_grid(i,j)[0],y=position_in_grid(i,j)[1],image=eightImg)
+                button.draw(game)
                 
             elif grid.g_matrix[i][j].value == 9:
-                game.screen.blit(nineImg,position_in_grid(i,j))
+                button = Button(x=position_in_grid(i,j)[0],y=position_in_grid(i,j)[1],image=nineImg)
+                button.draw(game)
                 
     pygame.display.update()
     return "game"
