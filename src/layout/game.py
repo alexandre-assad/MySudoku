@@ -2,6 +2,8 @@ import pygame
 from src.generator.game_class import Game
 from src.utils.os_manager import *
 
+
+
 def position_in_grid(y,x):
     return [y*71,x*71]
 
