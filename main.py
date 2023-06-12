@@ -11,9 +11,6 @@ from src.utils.os_manager import *
 sudoku_map = generate_map_from_txt("sudoku1.txt")
 print(sudoku_map)
 
-"""
-To be ereased, first test of sudoku matrix
-"""
 
 
 
