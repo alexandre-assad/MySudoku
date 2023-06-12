@@ -4,21 +4,27 @@ from src.generator.case import *
 from src.utils.txt_manager import *
 from src.utils.os_manager import *
 
-print(parse(sudoku_path("sudoku1.txt")))
 
+
+def generate_map_from_txt(file):
+    sudoku_list = parse(sudoku_path(file))
+    final_sudoku_map = []
+    sub_sudoku_map = []
+    for i in range(9):
+        for j in range(9):
+            sub_sudoku_map.append(Case(value=sudoku_list[i][j],x=i,y=j))
+        final_sudoku_map.append(sub_sudoku_map)
+        sub_sudoku_map = []
+    sudoku_map = Grid(final_sudoku_map)
+    return sudoku_map
+
+sudoku_map = generate_map_from_txt("sudoku1.txt")
+    
 
 """
 To be ereased, first test of sudoku matrix
 """
-sudoku_list = []
-sub_sudoku = []
-for i in range(9):
-    for j in range(9):
-        sub_sudoku.append(Case(2,i,j))
-    sudoku_list.append(sub_sudoku)
-    sub_sudoku = []
-sudoku_map = Grid(sudoku_list)
-sudoku_map.g_matrix[2][4]= Case(0,2,4)
+
 
 
 """
