@@ -3,9 +3,17 @@ from src.generator.game_class import Game
 from src.utils.os_manager import *
 
 
-
+"""
+Input : coordinates x and y in a matrix
+Outpout : an array of coordinates in a pygame scene
+"""
 def position_in_grid(y,x):
     return [y*71,x*71]
+
+
+"""
+Outpout : Create and init all the display of the Pygame scene (images, game_object,etc...)
+"""
 
 def create_display_game():
     global oneImg,twoImg,threeImg,fourImg,fiveImg,sixImg,sevenImg,eightImg,nineImg,backgroundImg
@@ -24,6 +32,11 @@ def create_display_game():
     backgroundImg = pygame.image.load(sprite_path("background_sudoku.png")).convert_alpha()
     return game_object
 
+
+"""
+Input : A game object and a matrix
+Outpout : Display the screen of the game object, where there are images correlated to the matrix values
+"""
 
 def display_game(game,grid):
     game.screen.blit(backgroundImg,(0,0))

@@ -2,6 +2,11 @@ from src.layout.game import *
 from src.generator.grid import *
 from src.generator.case import *
 
+
+
+"""
+To be ereased, first test of sudoku matrix
+"""
 sudoku_list = []
 sub_sudoku = []
 for i in range(9):
@@ -12,6 +17,13 @@ for i in range(9):
 print(sudoku_list)
 sudoku_map = Grid(sudoku_list)
 sudoku_map.g_matrix[2][4]= Case(5,2,4)
+
+
+"""
+Input : str, state of the current game
+Basic Code : While loops, where it loops the scene (game, home, etc...)
+Outpout : the pygame scene
+"""
 
 def main(state):
     game_object = create_display_game()
