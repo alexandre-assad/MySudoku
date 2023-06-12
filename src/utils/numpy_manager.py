@@ -22,9 +22,12 @@ def exter(arr1:list,arr2:list) -> list:
     return temp3
 
 
-"""
-To be continued
+
+
 def is_unique(value:int,arr:list) -> bool:
-    return 
-"""
+    if value in arr:
+        return False
+    else:
+        return True
+
 

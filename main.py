@@ -10,7 +10,8 @@ from src.utils.os_manager import *
 
 sudoku_map = generate_map_from_txt("sudoku1.txt")
 print(sudoku_map)
-
+print(sudoku_map.potential_value_lines(0,0))
+print(sudoku_map.potential_value_box(4,5))
 
 
 

@@ -22,7 +22,13 @@ class Grid:
         box = [x//3,y//3]
         for i in range(3):
             for j in range(3):
-                list_values.append(self.g_matrix[box[0]*3+i][box[1]*3+j])
+                if x!= i or y!= j:
+                    list_values.append(self.g_matrix[box[0]*3+i][box[1]*3+j].value)
+        for i in range(len(list_values)):
+            if list_values[i] == "_":
+                list_values[i] = 0
+            else:
+                list_values[i] = int(list_values[i])
         return exter(list_values,[1,2,3,4,5,6,7,8,9])
     
     """
@@ -33,9 +39,37 @@ class Grid:
     def potential_value_lines(self,x,y):
         list_values_1 = []
         list_values_2 = []
+        
         for i in range(9):
-            list_values_1.append(self.g_matrix[i][y])
+            if i != x:
+                list_values_1.append(self.g_matrix[i][y].value)
+                
         for j in range(9):
-            list_values_2.append(self.g_matrix[x][j])
-        return exter(exter(list_values_1,[1,2,3,4,5,6,7,8,9]),list_values_2)
+            if j != y:
+                list_values_2.append(self.g_matrix[x][j].value)
+            
+        #I Rewrite good lists
+        for i in range(len(list_values_1)):
+            if list_values_1[i] == "_":
+                list_values_1[i] = 0
+            else:
+                list_values_1[i] = int(list_values_1[i])
+                
+            if list_values_2[i] == "_":
+                list_values_2[i] = 0
+            else:
+                list_values_2[i] = int(list_values_2[i])
+            
+        list_value = np.array([list_values_1,list_values_2])
+        list_value = np.unique(list_value)
+        
+        return exter(list_value,[1,2,3,4,5,6,7,8,9])
     
+    def not_win(self):
+        for i in range(9):
+            for j in range(9):
+                if str(self.potential_value_box(i,j)[0]) == self.g_matrix[i][j].value and str(self.potential_value_box(i,j)[0]) == self.g_matrix[i][j].value:
+                    pass
+                else:
+                    return True
+        return False
