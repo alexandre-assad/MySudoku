@@ -16,10 +16,11 @@ Outpout : Create and init all the display of the Pygame scene (images, game_obje
 """
 
 def create_display_game():
-    global oneImg,twoImg,threeImg,fourImg,fiveImg,sixImg,sevenImg,eightImg,nineImg,backgroundImg
+    global emptyImg, oneImg,twoImg,threeImg,fourImg,fiveImg,sixImg,sevenImg,eightImg,nineImg,backgroundImg
     pygame.init()
     game_object = Game(screen=pygame.display.set_mode((800,630)),size=[(800,600)])
     pygame.display.set_caption("My Sokoban")
+    emptyImg = pygame.image.load(sprite_path("number_empty.png")).convert_alpha()
     oneImg = pygame.image.load(sprite_path("number_one.png")).convert_alpha()
     twoImg = pygame.image.load(sprite_path("number_two.png")).convert_alpha()
     threeImg = pygame.image.load(sprite_path("number_three.png")).convert_alpha()
@@ -42,9 +43,13 @@ def display_game(game,grid):
     game.screen.blit(backgroundImg,(0,0))
     
     for i in range(9):
+        
         for j in range(9):
             
-            if grid.g_matrix[i][j].value == 1:
+            if grid.g_matrix[i][j].value == 0:
+                game.screen.blit(emptyImg,position_in_grid(i,j))
+                
+            elif grid.g_matrix[i][j].value == 1:
                 game.screen.blit(oneImg,position_in_grid(i,j))
                 
             elif grid.g_matrix[i][j].value == 2:
