@@ -8,7 +8,7 @@ from src.generator.backtracking import *
 
 
 
-sudoku_map = generate_map_from_txt("sudoku1.txt")
+sudoku_map = generate_map_from_txt("sudoku2.txt")
 print(sudoku_map)
 print(sudoku_map.not_win())
 
