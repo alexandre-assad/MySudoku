@@ -8,7 +8,7 @@ from src.generator.backtracking import *
 
 
 
-sudoku_map = generate_map_from_txt("test.txt")
+sudoku_map = generate_map_from_txt("sudoku1.txt")
 print(sudoku_map)
 print(sudoku_map.not_win())
 
@@ -27,8 +27,8 @@ def main(state):
         for event in events:
             if event.type == pygame.QUIT:
                 state = "over"
-            backtracking(sudoku_map,game_object)
-            #sokoban_map = game_event(event,first_player,sokoban_map)
+        print(backtracking(sudoku_map))
+
 
     pygame.quit()
 
