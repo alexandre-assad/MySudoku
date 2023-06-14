@@ -22,7 +22,9 @@ def backtracking(grid):
                     
             
             if i==j and i== 8:
-                list_value = grid.empty_case
+                index_value = grid.first_empty_case()
+                list_value = grid.g_matrix[index_value[0]][index_value[1]].potential_value
+                
                 if backtracking(n_grid) != False:
                     grid = n_grid
                     

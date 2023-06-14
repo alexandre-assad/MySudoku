@@ -92,8 +92,13 @@ class Grid:
         return number in box and number in lines
             
     
+    """
+    Input : the grid
+    Output : an array of two int, the coordinates of the firls empty case
+    """
     def first_empty_case(self):
         for i in range(9):
             for j in range(9):
                 if self.g_matrix[i][j].value == "_":
                     return [i,j]
+        return False
