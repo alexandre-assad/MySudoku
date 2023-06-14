@@ -22,7 +22,7 @@ def backtracking(grid):
                     
             
             if i==j and i== 8:
-                pass
+                list_value = grid.empty_case
                 if backtracking(n_grid) != False:
                     grid = n_grid
                     

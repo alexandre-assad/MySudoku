@@ -86,8 +86,14 @@ class Grid:
     Input : coordinates and a number to Test
     Output : True if it can have the potential value of the number, else False
     """
-    def is_case_numbered(self,x,y,number):
+    def is_case_numbered(self,x:int,y:int,number:int):
         box = self.potential_value_box(x,y)
         lines = self.potential_value_lines(x,y)
         return number in box and number in lines
             
+    
+    def first_empty_case(self):
+        for i in range(9):
+            for j in range(9):
+                if self.g_matrix[i][j].value == "_":
+                    return [i,j]
