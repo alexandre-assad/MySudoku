@@ -1,4 +1,4 @@
-
+from src.utils.numpy_manager import *
 
 class Case:
     
@@ -15,11 +15,15 @@ class Case:
         return str(self.value)
     
     """
-    Input : self.potential value 
+    Input : an array that will be self.potential_value 
     Outpout : Self.value if there is only one potential value
     """
-    def get_value(self):
+    def get_value(self,arr_potential:list):
+
+        self.potential_value = arr_potential
         
         if len(self.potential_value)==1:
             
             self.value = self.potential_value[0]
+        
+        

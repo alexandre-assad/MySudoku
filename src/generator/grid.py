@@ -65,6 +65,10 @@ class Grid:
         
         return exter(list_value,[1,2,3,4,5,6,7,8,9])
     
+    '''
+    Input : the grid
+    Outpout : True if it's not finished, false if it is
+    '''
     def not_win(self):
         for i in range(9):
             for j in range(9):
@@ -73,3 +77,19 @@ class Grid:
                 else:
                     return True
         return False
+    
+    
+    """
+    Now i will create other function to developp an other way to solve the sudoku
+    I will create a way more "human" to solve it
+    """
+    
+    """
+    Input : coordinates and a number to Test
+    Output : True if it can have the potential value of the number, else False
+    """
+    def is_case_numbered(self,x,y,number):
+        box = self.potential_value_box(x,y)
+        lines = self.potential_value_lines(x,y)
+        return number in box and number in lines
+            
