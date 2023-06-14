@@ -72,9 +72,7 @@ class Grid:
     def not_win(self):
         for i in range(9):
             for j in range(9):
-                if str(self.potential_value_box(i,j)[0]) == self.g_matrix[i][j].value and str(self.potential_value_box(i,j)[0]) == self.g_matrix[i][j].value:
-                    pass
-                else:
+                if self.g_matrix[i][j].value == "0" or self.g_matrix[i][j].value == "_":
                     return True
         return False
     

@@ -25,5 +25,7 @@ class Case:
         if len(self.potential_value)==1:
             
             self.value = self.potential_value[0]
+            return True
         
+        return False
         

@@ -1,0 +1,20 @@
+from src.layout.game import *
+
+def backtracking(grid,game):
+    array_potential = []
+    while grid.not_win():
+        
+        for i in range(9):
+            for j in range(9):
+                
+                if grid.g_matrix[i][j].value == "_":
+                    
+                    for number in range(1,9):
+                        if grid.is_case_numbered(i,j,number):
+                            array_potential.append(number)
+                            
+                    if grid.g_matrix[i][j].get_value(array_potential):
+                        display_game(game,grid)
+                        
+                    array_potential = []
+                            
