@@ -102,3 +102,49 @@ class Grid:
                 if self.g_matrix[i][j].value == "_":
                     return [i,j]
         return True
+    
+    
+    """
+    Input : the grid and two int x and y, coordinates
+    Output : A boolean, true if the case is well placed in the box
+    """
+    
+    def is_good_case_box(self,x,y):
+        box = [x//3,y//3]
+        for i in range(3):
+            for j in range(3):
+                if i != x and j != y:
+                    if self.g_matrix[box[0]*3+i][box[1]*3+j].value == self.g_matrix[i][j].value:
+                        return False
+        return True
+    
+    
+    """
+    Input : the grid and two int x and y, coordinates
+    Output : A boolean, true if the case is well placed in the box
+    """
+    
+    def is_good_case_line(self,x,y):
+        for i in range(9):
+            if i != x:
+                if self.g_matrix[i][y].value == self.g_matrix[x][y].value:
+                    return False
+        for j in range(9):
+            if j != y:
+                if self.g_matrix[x][j].value == self.g_matrix[x][y].value:
+                    return False
+        return True
+    
+    
+    """
+    Input : the grid completed
+    Output: A boolean, true if the grid is correct
+    """
+    def is_grid_correct(self):
+        for i in range(9):
+            for j in range(9):
+                if self.g_matrix[i][j].is_good_case_box != True :
+                    return False
+                elif self.g_matrix[i][j].is_good_case_line != True:
+                    return False
+        return True

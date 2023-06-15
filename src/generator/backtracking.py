@@ -33,7 +33,6 @@ def backtracking(grid):
             for i in range(len(list_value)):
                 n_grid.g_matrix[index_value[0]][index_value[1]].value = list_value[i]
                 if backtracking_2(n_grid) == True :
-                    
                     grid = n_grid
         else:
             return grid
