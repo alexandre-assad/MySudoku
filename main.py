@@ -19,7 +19,7 @@ Basic Code : While loops, where it loops the scene (game, home, etc...)
 Outpout : the pygame scene
 """
 
-def main(state):
+def main(state,sudoku_map):
     game_object = create_display_game()
     while state == "game":
         events = pygame.event.get()
@@ -27,10 +27,12 @@ def main(state):
         for event in events:
             if event.type == pygame.QUIT:
                 state = "over"
-        print(backtracking(sudoku_map))
+        
+        
 
 
     pygame.quit()
 
 if __name__ == "__main__":
-    main("game")
+    sudoku_map = backtracking(sudoku_map)
+    main("game",sudoku_map)

@@ -29,7 +29,7 @@ class Grid:
                 list_values[i] = 0
             else:
                 list_values[i] = int(list_values[i])
-        return exter(list_values,[1,2,3,4,5,6,7,8,9])
+        return exter(list_values,[0,1,2,3,4,5,6,7,8,9])
     
     """
     Input : two int and a matrix, coordinates x and y of a case, with the matrix of the grid
@@ -63,7 +63,7 @@ class Grid:
         list_value = np.array([list_values_1,list_values_2])
         list_value = np.unique(list_value)
         
-        return exter(list_value,[1,2,3,4,5,6,7,8,9])
+        return exter(list_value,[0,1,2,3,4,5,6,7,8,9])
     
     '''
     Input : the grid
@@ -101,4 +101,4 @@ class Grid:
             for j in range(9):
                 if self.g_matrix[i][j].value == "_":
                     return [i,j]
-        return False
+        return True

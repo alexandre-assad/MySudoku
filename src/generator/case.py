@@ -22,7 +22,7 @@ class Case:
 
         self.potential_value = arr_potential
         
-        if len(self.potential_value)==1:
+        if len(self.potential_value)==1 and self.potential_value in [1,2,3,4,5,6,7,8,9]:
             
             self.value = self.potential_value[0]
             return True
