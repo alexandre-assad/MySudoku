@@ -142,9 +142,6 @@ class Grid:
     """
     def is_grid_correct(self):
         for i in range(9):
-            for j in range(9):
-                if self.g_matrix[i][j].is_good_case_box != True :
-                    return False
-                elif self.g_matrix[i][j].is_good_case_line != True:
+            if self.is_good_case_line(i,i) != True:
                     return False
         return True
