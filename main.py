@@ -7,8 +7,9 @@ from src.generator.backtracking import *
 
 
 
-
-
+print(complete_values_simple(generate_map_from_txt("sudoku1.txt")))
+current_map = complete_values_simple(generate_map_from_txt("sudoku1.txt"))
+print(current_map.g_matrix)
 
 
 """
@@ -18,8 +19,8 @@ Outpout : the pygame scene
 """
 
 def main(state,current_map):
-    current_map = backtracking_grid(current_map)
-
+    
+    
     game_object = create_display_game()
     while state == "game":
         events = pygame.event.get()
@@ -33,4 +34,4 @@ def main(state,current_map):
     pygame.quit()
 
 if __name__ == "__main__":
-    main("game",generate_map_from_txt("sudoku2.txt"))
+    main("game",current_map)
