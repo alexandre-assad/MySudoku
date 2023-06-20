@@ -33,7 +33,7 @@ def is_number_alone(number, x_box,y_box,grid):
         
         for j in range(3):
             
-            if grid.g_matrix[x_box*3+i][y_box*3+j].value == "_":
+            if grid.g_matrix[x_box*3+i][y_box*3+j].value == 0:
                 
                 if grid.is_case_numbered(x_box*3+i,y_box*3+j,number):
                     

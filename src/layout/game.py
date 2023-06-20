@@ -43,39 +43,38 @@ Outpout : Display the screen of the game object, where there are images correlat
 def display_game(game,grid):
     game.screen.fill((255,255,255))
     game.screen.blit(backgroundImg,(0,0))
-    
     for i in range(9):
         
         for j in range(9):
             
-            if grid.g_matrix[i][j].value == "_":
+            if grid.g_matrix[i][j].value == 0:
                 game.screen.blit(emptyImg,position_in_grid(i,j))
                 
-            elif grid.g_matrix[i][j].value == "1":
+            elif grid.g_matrix[i][j].value == 1:
                 game.screen.blit(oneImg,position_in_grid(i,j))
                 
-            elif grid.g_matrix[i][j].value == "2":
+            elif grid.g_matrix[i][j].value == 2:
                 game.screen.blit(twoImg,position_in_grid(i,j))
                 
-            elif grid.g_matrix[i][j].value == "3":
+            elif grid.g_matrix[i][j].value == 3:
                 game.screen.blit(threeImg,position_in_grid(i,j))
                 
-            elif grid.g_matrix[i][j].value == "4":
+            elif grid.g_matrix[i][j].value == 4:
                 game.screen.blit(fourImg,position_in_grid(i,j))
                 
-            elif grid.g_matrix[i][j].value == "5":
+            elif grid.g_matrix[i][j].value == 5:
                 game.screen.blit(fiveImg,position_in_grid(i,j))
                 
-            elif grid.g_matrix[i][j].value == "6":
+            elif grid.g_matrix[i][j].value == 6:
                 game.screen.blit(sixImg,position_in_grid(i,j))
                 
-            elif grid.g_matrix[i][j].value == "7":
+            elif grid.g_matrix[i][j].value == 7:
                 game.screen.blit(sevenImg,position_in_grid(i,j))
                 
-            elif grid.g_matrix[i][j].value == "8":
+            elif grid.g_matrix[i][j].value == 8:
                 game.screen.blit(eightImg,position_in_grid(i,j))
                 
-            elif grid.g_matrix[i][j].value == "9":
+            elif grid.g_matrix[i][j].value == 9:
                 game.screen.blit(nineImg,position_in_grid(i,j))
     solve_button = Button(x=215,y=700,image=solveImg)
     solve_button.draw(game)

@@ -7,9 +7,8 @@ from src.generator.backtracking import *
 
 
 
-print(complete_values_simple(generate_map_from_txt("sudoku1.txt")))
 current_map = complete_values_simple(generate_map_from_txt("sudoku1.txt"))
-print(current_map.g_matrix)
+print(current_map)
 
 
 """

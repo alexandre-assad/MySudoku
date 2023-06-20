@@ -5,13 +5,25 @@ class Grid:
     
     def __init__(self,grid_matrix:list):
         self.g_matrix = grid_matrix
-        
+        self.format()
         
     def __str__(self):
         for row in self.g_matrix:
             print(row)
         return ""
     
+    
+    def format(self):
+        for i in range(9):
+            for j in range(9):
+                if self.g_matrix[i][j].value == "_":
+                    self.g_matrix[i][j].value = 0
+                else:
+                    self.g_matrix[i][j].value = int(self.g_matrix[i][j].value)
+        
+        
+        
+        
     """
     Input : two int and a matrix, coordinates x and y of a case, with the matrix of the grid
     Basic structure : Find the 3x3 box where the case is, and test all the available values left
@@ -24,11 +36,6 @@ class Grid:
             for j in range(3):
                 if x!= i or y!= j:
                     list_values.append(self.g_matrix[box[0]*3+i][box[1]*3+j].value)
-        for i in range(len(list_values)):
-            if list_values[i] == "_":
-                list_values[i] = 0
-            else:
-                list_values[i] = int(list_values[i])
         return exter(list_values,[0,1,2,3,4,5,6,7,8,9])
     
     """
@@ -47,19 +54,7 @@ class Grid:
         for j in range(9):
             if j != y:
                 list_values_2.append(self.g_matrix[x][j].value)
-            
-        #I Rewrite good lists
-        for i in range(len(list_values_1)):
-            if list_values_1[i] == "_":
-                list_values_1[i] = 0
-            else:
-                list_values_1[i] = int(list_values_1[i])
-                
-            if list_values_2[i] == "_":
-                list_values_2[i] = 0
-            else:
-                list_values_2[i] = int(list_values_2[i])
-            
+
         list_value = np.array([list_values_1,list_values_2])
         list_value = np.unique(list_value)
         
@@ -72,7 +67,7 @@ class Grid:
     def not_win(self):
         for i in range(9):
             for j in range(9):
-                if self.g_matrix[i][j].value == "0" or self.g_matrix[i][j].value == "_":
+                if self.g_matrix[i][j].value == 0:
                     return True
         return False
     
@@ -99,7 +94,7 @@ class Grid:
     def first_empty_case(self):
         for i in range(9):
             for j in range(9):
-                if self.g_matrix[i][j].value == "_":
+                if self.g_matrix[i][j].value == 0:
                     return [i,j]
         return True
     
