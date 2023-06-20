@@ -120,16 +120,21 @@ class Grid:
     """
     
     def is_good_case_line(self,x,y):
+        list_number = []
         for i in range(9):
-            if i != x:
-                if self.g_matrix[i][y].value == self.g_matrix[x][y].value:
+            if self.g_matrix[i][y].value != 0:
+                if self.g_matrix[i][y].value not in list_number:
+                    list_number.append(self.g_matrix[i][y].value)
+                else:
                     return False
+        list_number = []
         for j in range(9):
-            if j != y:
-                if self.g_matrix[x][j].value == self.g_matrix[x][y].value:
+            if self.g_matrix[x][j].value != 0:
+                if self.g_matrix[x][j].value not in list_number:
+                    list_number.append(self.g_matrix[x][j].value)
+                else:
                     return False
         return True
-    
     
     """
     Input : the grid completed
@@ -140,3 +145,9 @@ class Grid:
             if self.is_good_case_line(i,i) != True:
                     return False
         return True
+    
+    def get_potential(self):
+        for i in range(9):
+            for j in range(9):
+                if self.g_matrix[i][j].value == 0:
+                    self.g_matrix[i][j].get_value(inter(self.potential_value_lines(i,j),self.potential_value_box(i,j)))

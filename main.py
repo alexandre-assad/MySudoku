@@ -7,8 +7,11 @@ from src.generator.backtracking import *
 
 
 
-current_map = complete_values_simple(generate_map_from_txt("sudoku1.txt"))
+current_map = generate_map_from_txt("sudoku2.txt")
 print(current_map)
+print(backtracking(current_map))
+print(current_map.is_grid_correct())
+
 
 
 """
