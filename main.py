@@ -5,13 +5,13 @@ from src.tools.txt_manager import *
 from src.utils.os_manager import *
 from src.generator.backtracking import *
 from src.generator.force_brute import *
-
+from src.tools.array_manager import *
 
 current_map = generate_map_from_txt("sudoku2.txt")
 print(current_map)
 print(force_brute(current_map))
-load_json_sudoku()
-print(current_map.is_grid_correct())
+current_map = get_grid_list(load_json_sudoku())
+print(current_map)
 
 
 
