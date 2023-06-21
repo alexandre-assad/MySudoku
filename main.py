@@ -7,11 +7,12 @@ from src.generator.backtracking import *
 from src.generator.force_brute import *
 from src.tools.array_manager import *
 
-current_map = generate_map_from_txt("sudoku2.txt")
+current_map = generate_map_from_txt("evilsudoku.txt")
 print(current_map)
-print(force_brute(current_map))
+print(simple_backtracking(current_map))
 current_map = get_grid_list(load_json_sudoku())
 print(current_map)
+print(current_map.is_grid_correct())
 
 
 
