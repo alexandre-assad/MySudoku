@@ -12,3 +12,6 @@ def sprite_path(file:str):
 def sudoku_path(file:str):
     sprite_path = "assets/sudoku_grids"
     return path.join(sprite_path,file)
+
+def solve_sudoku_path():
+    return "config/solve_sudoku.json"

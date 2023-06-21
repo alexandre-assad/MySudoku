@@ -3,26 +3,70 @@ from src.utils.random_manager import *
 from src.tools.constant import *
 
 
-def backtracking(grid):
+def backtracking_grid(grid,basic_grid):
+    
+    grid = complete_values_simple(grid)
+    if grid.first_empty_case() == True:
+        if grid.is_grid_correct():
+            print("correct test")
+            return grid
+    
+    potential_values = grid.g_matrix[grid.first_empty_case()[0]][grid.first_empty_case()[1]].potential_value
+    for potential_value in potential_values:
+        print(basic_grid)
+        grid.g_matrix[grid.first_empty_case()[0]][grid.first_empty_case()[1]].value = potential_value
+        if  backtracking_bool(grid,grid):
+            backtracking_grid(grid,grid)
+            break
+        grid = basic_grid
+
+def backtracking_bool(grid,basic_grid):
     if grid.is_grid_correct() == False:
+        print('false test')
         return False
     elif grid.first_empty_case() == True:
         if grid.is_grid_correct():
-            return grid
+            print("correct test")
+            grid = basic_grid
+            return True
+        else:
+            print("correct test")
+            return False
         
     grid = complete_values_simple(grid)
+    if grid.first_empty_case() == True:
+        if grid.is_grid_correct():
+            print("correct test")
+            return True
     basic_grid = grid
+    potential_values = grid.g_matrix[grid.first_empty_case()[0]][grid.first_empty_case()[1]].potential_value
+    print(potential_values)
+    if len(potential_values) == 0:
+        print("array []")
+        return False
     
-    for potential_value in grid.g_matrix[grid.first_empty_case()[0]][grid.first_empty_case()[1]].potential_value:
-        print(basic_grid)
-        grid.g_matrix[grid.first_empty_case()[0]][grid.first_empty_case()[1]].value = potential_value
+    for potential_value in potential_values:
         
+        print(grid.first_empty_case())
+
+        try:
+            grid.g_matrix[grid.first_empty_case()[0]][grid.first_empty_case()[1]].value = potential_value
+        except:
+            if grid.is_grid_correct() ==True:
+                return True
+            else:
+                return False
         
-        if backtracking(grid) != False:
-            return backtracking(grid)
+        if backtracking_bool(grid,grid):
+            return True
+        else:
+            grid = basic_grid
         
-        grid = basic_grid
-    
+            
+    if len(grid.g_matrix[grid.first_empty_case()[0]][grid.first_empty_case()[1]].potential_value) == 0:
+        print("array []")
+        return False
+
     
     
 def complete_values_simple(grid):
