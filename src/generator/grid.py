@@ -28,7 +28,7 @@ class Grid:
         """
         Input : two int and a matrix, coordinates x and y of a case, with the matrix of the grid
         Basic structure : Find the 3x3 box where the case is, and test all the available values left
-        Outpout : a list, All the potential value the case could have in the box (3x3)
+        Output : a list, All the potential value the case could have in the box (3x3)
         """
         list_values = []
         box = [x//3,y//3]
@@ -42,7 +42,7 @@ class Grid:
         """
         Input : two int and a matrix, coordinates x and y of a case, with the matrix of the grid
         Basic code : Test all the available values for each axis
-        Outpout : a list, All the potential value the case could have in the two axis (y-axis and x-axis)
+        Output : a list, All the potential value the case could have in the two axis (y-axis and x-axis)
         """
         list_values_1 = []
         list_values_2 = []
@@ -69,7 +69,7 @@ class Grid:
     def not_win(self):
         '''
         Input : the grid
-        Outpout : True if it's not finished, false if it is
+        Output : True if it's not finished, false if it is
         '''
         for i in range(9):
             for j in range(9):
