@@ -3,19 +3,19 @@ from src.layout.generator.game_class import Game
 from src.utils.os_manager import *
 from src.generator.button import *
 
-"""
-Input : coordinates x and y in a matrix
-Outpout : an array of coordinates in a pygame scene
-"""
-def position_in_grid(y,x):
+def position_in_grid(y:int,x:int):
+    """
+    Input : coordinates x and y in a matrix
+    Outpout : an array of coordinates in a pygame scene
+    """
     return [x*71,y*71]
 
 
-"""
-Outpout : Create and init all the display of the Pygame scene (images, game_object,etc...)
-"""
 
 def create_display_game():
+    """
+    Outpout : Create and init all the display of the Pygame scene (images, game_object,etc...)
+    """
     global emptyImg, oneImg,twoImg,threeImg,fourImg,fiveImg,sixImg,sevenImg,eightImg,nineImg,solveImg,backgroundImg
     pygame.init()
     game_object = Game(screen=pygame.display.set_mode((630,1000)),size=[(630,1000)])
@@ -35,12 +35,12 @@ def create_display_game():
     return game_object
 
 
-"""
-Input : A game object and a matrix
-Outpout : Display the screen of the game object, where there are images correlated to the matrix values
-"""
 
-def display_game(game,grid):
+def display_game(game:Game,grid):
+    """
+    Input : A game object and a grid
+    Outpout : Display the screen of the game object, where there are images correlated to the matrix values
+    """
     game.screen.fill((255,255,255))
     game.screen.blit(backgroundImg,(0,0))
     for i in range(9):

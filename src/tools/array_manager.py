@@ -2,7 +2,11 @@ from src.generator.grid import *
 from src.generator.case import *
 
 def get_grid_list(liste:list):
-    
+    """
+    Input : a list
+    Basic code : Create a grid with a list
+    Output : A grid 
+    """
     matrix = []
     under_list= []
     for i in range(81):

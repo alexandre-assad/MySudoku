@@ -3,7 +3,12 @@ from src.utils.random_manager import *
 from src.utils.json_manager import *
 from src.tools.array_manager import *
 
-def simple_backtracking(grid):
+def simple_backtracking(grid:Grid):
+    """
+    Input : A grid
+    Basic code : For each case empty, do a recursive while in the grid testing values, then dumping the grid completed 
+    Output : A completed grid
+    """
     for i in range(9):
         for j in range(9):
             if grid.g_matrix[i][j].value == 0:

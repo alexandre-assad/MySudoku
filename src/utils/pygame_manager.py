@@ -1,13 +1,12 @@
 import pygame
 
 
-"""
-For all the fuctions :
-Input : An event
-Outpout : a boolean, True if the specific key has been pressed
-"""
 
-def one_key(event):
+def one_key(event:pygame.event):
+    """
+    Input : An event
+    Outpout : a boolean, True if the specific key has been pressed
+    """
 
     if event.type == pygame.KEYDOWN:
         

@@ -2,6 +2,10 @@ import json
 from src.utils.os_manager import *
 
 def dump_json_sudoku(liste : list):
+    """
+    Input : a list (a sudoku grid)
+    Output : Json dump the list
+    """
     new_list = []
     for i in range(len(liste)):
         for j in range(len(liste[0])):
@@ -13,6 +17,9 @@ def dump_json_sudoku(liste : list):
         json.dump(data, f, indent=4)
 
 def load_json_sudoku():
+    """
+    Output : a list, the matrix of the file json_sudoku
+    """
     with open(solve_sudoku_path(), 'r') as f:
         dico = json.loads(f.read())
     list = dico["sudoku_grid"]

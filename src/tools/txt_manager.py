@@ -3,11 +3,11 @@ from src.generator.grid import *
 from src.generator.case import *
 
 
-"""
-Input : a text file
-Outpout : a 2d array with the grid of sudoku from the file
-"""
-def parse(file):
+def parse(file:str):
+    """
+    Input : a text file
+    Outpout : a 2d array with the grid of sudoku from the file
+    """
     with open (file) as f:
         content = f.read()
     content = "".join(content.splitlines())
@@ -21,11 +21,11 @@ def parse(file):
     return np.array(sudoku_array)
 
 
-"""
-Input : a text file
-Outpout : create a Grid with Case which have value from the file
-"""
-def generate_map_from_txt(file):
+def generate_map_from_txt(file:str):
+    """
+    Input : a text file
+    Outpout : create a Grid with Case which have value from the file
+    """
     sudoku_list = parse(sudoku_path(file))
     final_sudoku_map = []
     sub_sudoku_map = []
