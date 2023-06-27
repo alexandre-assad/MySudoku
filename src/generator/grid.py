@@ -60,11 +60,17 @@ class Grid:
         
         return exter(list_value,[0,1,2,3,4,5,6,7,8,9])
     
-    '''
-    Input : the grid
-    Outpout : True if it's not finished, false if it is
-    '''
+    def potential_value_row(self,row):
+        list_value = []
+        for i in range(9):
+            list_value.append(self.g_matrix[row][i].value)
+        return exter(list_value,[0,1,2,3,4,5,6,7,8,9])
+        
     def not_win(self):
+        '''
+        Input : the grid
+        Outpout : True if it's not finished, false if it is
+        '''
         for i in range(9):
             for j in range(9):
                 if self.g_matrix[i][j].value == 0:
@@ -136,11 +142,11 @@ class Grid:
                     return False
         return True
     
-    """
-    Input : the grid completed
-    Output: A boolean, true if the grid is correct
-    """
     def is_grid_correct(self):
+        """
+        Input : the grid completed
+        Output: A boolean, true if the grid is correct
+        """
         for i in range(9):
             if self.is_good_case_line(i,i) != True:
                     return False
@@ -151,3 +157,11 @@ class Grid:
             for j in range(9):
                 if self.g_matrix[i][j].value == 0:
                     self.g_matrix[i][j].get_value(inter(self.potential_value_lines(i,j),self.potential_value_box(i,j)))
+                    
+    def all_empty_cases(self):
+        list_index_all = []
+        for i in range(9):
+            for j in range(9):
+                if self.g_matrix[i][j].value == 0:
+                    list_index_all.append([i,j])
+        return list_index_all

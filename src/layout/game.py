@@ -1,5 +1,5 @@
 import pygame 
-from src.generator.game_class import Game
+from src.layout.generator.game_class import Game
 from src.utils.os_manager import *
 from src.generator.button import *
 

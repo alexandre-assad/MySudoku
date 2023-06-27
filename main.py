@@ -7,24 +7,19 @@ from src.generator.backtracking import *
 from src.generator.force_brute import *
 from src.tools.array_manager import *
 
-current_map = generate_map_from_txt("evilsudoku.txt")
+current_map = generate_map_from_txt("sudoku1.txt")
 print(current_map)
-print(simple_backtracking(current_map))
-current_map = get_grid_list(load_json_sudoku())
-print(current_map)
-print(current_map.is_grid_correct())
+print(advance_brute_force(current_map))
 
 
 
-"""
-Input : str, state of the current game
-Basic Code : While loops, where it loops the scene (game, home, etc...)
-Outpout : the pygame scene
-"""
 
 def main(state,current_map):
-    
-    
+    """
+    Input : str, state of the current game
+    Basic Code : While loops, where it loops the scene (game, home, etc...)
+    Outpout : the pygame scene
+    """
     game_object = create_display_game()
     while state == "game":
         events = pygame.event.get()
